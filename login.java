@@ -83,32 +83,113 @@ public class login extends Application {
 
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				String username=login_text[3].getText();
+				final String username=login_text[3].getText();
 				if(login_text[4].getText().equals("Admin"))
 				{
 					Stage frame=new Stage();
 					frame.setTitle("Classroom Booking System");
 					Scene scene=new Scene(new Group());
 					Label user=new Label("Username: "+username);
+					user.setMinWidth(170);
+					user.setMaxWidth(170);
 					Label type=new Label("Type: Admin");
 					user.setFont(Font.font("Serif",17));
 					user.setTranslateX(600);
 					user.setTranslateY(20);
 					type.setFont(Font.font("Serif",17));
-					type.setTranslateX(524);
+					type.setTranslateX(430);
 				    type.setTranslateY(35);
 					Button view_request=new Button("View Requests");
-					view_request.setTranslateX(-45);
+					view_request.setTranslateX(-139);
 					view_request.setTranslateY(150);
 					view_request.setPrefSize(200,60);
-					view_request.setOnAction(new viewrequest());
+					view_request.setOnAction(new EventHandler<ActionEvent>() 
+					{
+
+						public void handle(ActionEvent arg0) {
+							// TODO Auto-generated method stub
+							Stage frame=new Stage();
+							frame.setTitle("Classroom Booking System");
+							Scene scene=new Scene(new Group());
+							Label user=new Label("Username: "+username);
+							user.setMinWidth(170);
+							user.setMaxWidth(170);
+							Label type=new Label("Type: Admin");
+							user.setFont(Font.font("Serif",17));
+							user.setTranslateX(600);
+							user.setTranslateY(20);
+							type.setFont(Font.font("Serif",17));
+							type.setTranslateX(430);
+						    type.setTranslateY(35);
+						    Button accept_request=new Button("Accept Request");
+						    accept_request.setTranslateX(-139);
+						    accept_request.setTranslateY(150);
+						    accept_request.setPrefSize(200,60);
+							Button reject_request=new Button("Reject Request");
+							reject_request.setTranslateX(-339);
+							reject_request.setTranslateY(260);
+							reject_request.setPrefSize(200,60);
+							Button back=new Button("Back");
+							back.setOnAction(new exit());
+							back.setTranslateX(-539);
+							back.setTranslateY(370);
+							back.setPrefSize(200,60);
+							frame.setWidth(800);
+						    frame.setHeight(600);
+						    HBox hbox=new HBox();
+					        hbox.getChildren().add(user);
+					        hbox.getChildren().add(type);
+							hbox.getChildren().add(accept_request);
+						    hbox.getChildren().add(reject_request);
+						    hbox.getChildren().add(back);
+					        ((Group)scene.getRoot()).getChildren().add(hbox);
+						    frame.setScene(scene);
+					        frame.show();
+						}
+						
+					});
 					Button view_timetable=new Button("View Timetable");
-					view_timetable.setTranslateX(-245);
+					view_timetable.setOnAction(new EventHandler<ActionEvent>() 
+					{
+
+						public void handle(ActionEvent arg0) {
+							// TODO Auto-generated method stub
+							Stage frame=new Stage();
+							frame.setTitle("Classroom Booking System");
+							Scene scene=new Scene(new Group());
+							Label user=new Label("Username: "+username);
+							user.setMinWidth(170);
+							user.setMaxWidth(170);
+							Label type=new Label("Type: Admin");
+							user.setFont(Font.font("Serif",17));
+							user.setTranslateX(600);
+							user.setTranslateY(20);
+							type.setFont(Font.font("Serif",17));
+							type.setTranslateX(430);
+						    type.setTranslateY(35);
+						    Button back=new Button("Back");
+							back.setOnAction(new exit());
+							back.setTranslateX(360);
+							back.setTranslateY(490);
+							back.setPrefSize(100,30);
+						    frame.setWidth(800);
+						    frame.setHeight(600);
+						    HBox hbox=new HBox();
+					        hbox.getChildren().add(user);
+					        hbox.getChildren().add(type);
+					        hbox.getChildren().add(back);
+					        ((Group)scene.getRoot()).getChildren().add(hbox);
+						    frame.setScene(scene);
+					        frame.show();
+						}
+						
+					});
+					view_timetable.setTranslateX(-339);
 					view_timetable.setTranslateY(260);
 					view_timetable.setPrefSize(200,60);
 					Button log_out=new Button("Log Out");
 					log_out.setOnAction(new exit());
-					log_out.setTranslateX(-445);
+					log_out.setTranslateX(-539);
 					log_out.setTranslateY(370);
 					log_out.setPrefSize(200,60);
 					frame.setWidth(800);
@@ -128,6 +209,10 @@ public class login extends Application {
 		});
 		Log_in.setTranslateX(-2110);
 		Log_in.setTranslateY(400);
+		Button exit=new Button("   Exit   ");
+		exit.setOnAction(new exit());
+		exit.setTranslateX(-1940);
+		exit.setTranslateY(500);
 		frame.setWidth(800);
 	    frame.setHeight(600);
 	    HBox hbox=new HBox();
@@ -138,10 +223,12 @@ public class login extends Application {
         hbox.getChildren().add(member_title);
         HBox.setHgrow(Sign_up,null);
         HBox.setHgrow(Log_in,null);
+        HBox.setHgrow(exit,null);
         for(int i=0;i<6;i++)
         	hbox.getChildren().add(login_text[i]);
         hbox.getChildren().add(Sign_up);
         hbox.getChildren().add(Log_in);
+        hbox.getChildren().add(exit); 
         ((Group)scene.getRoot()).getChildren().add(hbox);
         frame.setScene(scene);
         frame.show();
@@ -149,48 +236,6 @@ public class login extends Application {
 
 }
 
-
-class viewrequest implements EventHandler<ActionEvent>
-{		
-	
-	public void handle(ActionEvent event)
-	{	
-		Stage frame=new Stage();
-		frame.setTitle("Classroom Booking System");
-		Scene scene=new Scene(new Group());
-		Label user=new Label("Username: ");
-		Label type=new Label("Type: Admin");
-		user.setFont(Font.font("Serif",17));
-		user.setTranslateX(600);
-		user.setTranslateY(20);
-		type.setFont(Font.font("Serif",17));
-		type.setTranslateX(524);
-	    type.setTranslateY(35);
-	    Button accept_request=new Button("Accept Request");
-	    accept_request.setTranslateX(-45);
-	    accept_request.setTranslateY(150);
-	    accept_request.setPrefSize(200,60);
-		Button reject_request=new Button("Reject Request");
-		reject_request.setTranslateX(-245);
-		reject_request.setTranslateY(260);
-		reject_request.setPrefSize(200,60);
-		Button back=new Button("Back");
-		back.setOnAction(new exit());
-		back.setTranslateX(-445);
-		back.setTranslateY(370);
-		back.setPrefSize(200,60);frame.setWidth(800);
-	    frame.setHeight(600);
-	    HBox hbox=new HBox();
-        hbox.getChildren().add(user);
-        hbox.getChildren().add(type);
-		hbox.getChildren().add(accept_request);
-	    hbox.getChildren().add(reject_request);
-	    hbox.getChildren().add(back);
-        ((Group)scene.getRoot()).getChildren().add(hbox);
-	    frame.setScene(scene);
-        frame.show();
-	}	
-}	
 
 class exit implements EventHandler<ActionEvent>
 {
