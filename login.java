@@ -340,3 +340,12 @@ public class login extends Application {
 }
 
 
+class exit implements EventHandler<ActionEvent>
+{
+
+	public void handle(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		((Node)(arg0.getSource())).getScene().getWindow().hide();
+	}
+	
+}
