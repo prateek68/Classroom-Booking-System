@@ -148,7 +148,7 @@ public class login extends Application {
 						}
 						
 					});
-					Button view_timetable=new Button("View Timetable");
+					Button view_timetable=new Button("View Room Status");
 					view_timetable.setOnAction(new EventHandler<ActionEvent>() 
 					{
 
@@ -167,6 +167,17 @@ public class login extends Application {
 							type.setFont(Font.font("Serif",17));
 							type.setTranslateX(430);
 						    type.setTranslateY(35);
+						    TextField room_no=new TextField();
+						    room_no.setPromptText("Enter Room Number");
+						    room_no.setTranslateX(-250);
+						    room_no.setTranslateY(400);
+						    room_no.setPrefWidth(200);
+						    Button book_room=new Button(" Book Room ");
+						    book_room.setTranslateX(-245);
+						    book_room.setTranslateY(400);
+						    Button cancel_room=new Button("Cancel Room");
+						    cancel_room.setTranslateX(-240);
+						    cancel_room.setTranslateY(400);
 						    Button back=new Button("Back");
 							back.setOnAction(new exit());
 							back.setTranslateX(360);
@@ -178,6 +189,9 @@ public class login extends Application {
 					        hbox.getChildren().add(user);
 					        hbox.getChildren().add(type);
 					        hbox.getChildren().add(back);
+					        hbox.getChildren().add(room_no);
+					        hbox.getChildren().add(book_room);
+					        hbox.getChildren().add(cancel_room);
 					        ((Group)scene.getRoot()).getChildren().add(hbox);
 						    frame.setScene(scene);
 					        frame.show();
@@ -203,6 +217,95 @@ public class login extends Application {
 			        ((Group)scene.getRoot()).getChildren().add(hbox);
 			        frame.setScene(scene);
 			        frame.show();
+				}
+				
+				else if(login_text[4].getText().equals("Faculty"))
+				{
+					Stage frame=new Stage();
+					frame.setTitle("Classroom Booking System");
+					Scene scene=new Scene(new Group());
+					Label user=new Label("Username: "+username);
+					user.setMinWidth(170);
+					user.setMaxWidth(170);
+					Label type=new Label("Type: Faculty");
+					user.setFont(Font.font("Serif",17));
+					user.setTranslateX(600);
+					user.setTranslateY(20);
+					type.setFont(Font.font("Serif",17));
+					type.setTranslateX(430);
+				    type.setTranslateY(35);
+					Button view_timetable=new Button("View Room Status");
+					view_timetable.setOnAction(new EventHandler<ActionEvent>() 
+					{
+
+						public void handle(ActionEvent arg0) {
+							// TODO Auto-generated method stub
+							Stage frame=new Stage();
+							frame.setTitle("Classroom Booking System");
+							Scene scene=new Scene(new Group());
+							Label user=new Label("Username: "+username);
+							user.setMinWidth(170);
+							user.setMaxWidth(170);
+							Label type=new Label("Type: Faculty");
+							user.setFont(Font.font("Serif",17));
+							user.setTranslateX(600);
+							user.setTranslateY(20);
+							type.setFont(Font.font("Serif",17));
+							type.setTranslateX(430);
+						    type.setTranslateY(35);
+						    TextField room_no=new TextField();
+						    room_no.setPromptText("Enter Room Number");
+						    room_no.setTranslateX(-250);
+						    room_no.setTranslateY(400);
+						    room_no.setPrefWidth(200);
+						    Button book_room=new Button(" Book Room ");
+						    book_room.setTranslateX(-245);
+						    book_room.setTranslateY(400);
+						    Button cancel_room=new Button("Cancel Room");
+						    cancel_room.setTranslateX(-240);
+						    cancel_room.setTranslateY(400);
+						    Button back=new Button("Back");
+							back.setOnAction(new exit());
+							back.setTranslateX(360);
+							back.setTranslateY(490);
+							back.setPrefSize(100,30);
+						    frame.setWidth(800);
+						    frame.setHeight(600);
+						    HBox hbox=new HBox();
+					        hbox.getChildren().add(user);
+					        hbox.getChildren().add(type);
+					        hbox.getChildren().add(back);
+					        hbox.getChildren().add(room_no);
+					        hbox.getChildren().add(book_room);
+					        hbox.getChildren().add(cancel_room);
+					       ((Group)scene.getRoot()).getChildren().add(hbox);
+						    frame.setScene(scene);
+					        frame.show();
+						}
+						
+					});
+					view_timetable.setTranslateX(-139);
+					view_timetable.setTranslateY(200);
+					view_timetable.setPrefSize(200,60);
+					Button log_out=new Button("Log Out");
+					log_out.setOnAction(new exit());
+					log_out.setTranslateX(-339);
+					log_out.setTranslateY(350);
+					log_out.setPrefSize(200,60);
+					frame.setWidth(800);
+				    frame.setHeight(600);
+				    HBox hbox=new HBox();
+			        hbox.getChildren().add(user);
+			        hbox.getChildren().add(type);
+			        hbox.getChildren().add(view_timetable);
+			        hbox.getChildren().add(log_out);
+			        ((Group)scene.getRoot()).getChildren().add(hbox);
+			        frame.setScene(scene);
+			        frame.show();
+				}
+				else if(login_text[4].getText().equals("Student"))
+				{
+					
 				}
 			}
 			
@@ -237,12 +340,3 @@ public class login extends Application {
 }
 
 
-class exit implements EventHandler<ActionEvent>
-{
-
-	public void handle(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		((Node)(arg0.getSource())).getScene().getWindow().hide();
-	}
-	
-}
