@@ -160,7 +160,6 @@ public class Student_page extends Application {
 					    new_request.setOnAction(new EventHandler<ActionEvent>()
 					    		{
 
-									@Override
 									public void handle(ActionEvent arg0) {
 										// TODO Auto-generated method stub
 										Stage frame=new Stage();
@@ -240,7 +239,6 @@ public class Student_page extends Application {
 					    cancel_request.setOnAction(new EventHandler<ActionEvent>()
 			    		{
 
-							@Override
 							public void handle(ActionEvent arg0) {
 								// TODO Auto-generated method stub
 								Stage frame=new Stage();
@@ -475,6 +473,11 @@ public class Student_page extends Application {
 	    
 		frame.setWidth(800);
 	    frame.setHeight(600);
+	    Button logout=new Button("LogOut");
+		logout.setOnAction(new exit());
+		logout.setTranslateX(-1650);
+		logout.setTranslateY(500);
+		logout.setPrefSize(100,30);
 	    HBox hbox=new HBox();
 	    hbox.getChildren().add(label1);
 	    hbox.getChildren().add(label2);
@@ -484,7 +487,7 @@ public class Student_page extends Application {
 
         	hbox.getChildren().add(buttons[i]);
         }
-
+        hbox.getChildren().add(logout);
         ((Group)scene.getRoot()).getChildren().add(hbox);
         frame.setScene(scene);
         frame.show();
