@@ -1,7 +1,16 @@
+package APproject;
+
 import java.util.ArrayList;
 
 public class Faculty extends Person{
 	private ArrayList<Room> rooms;
+	public Faculty(String n,String e,String p,String t){
+		super();
+		credentials.setEmailId(e);
+		credentials.setName(n);
+		credentials.setPassword(p);
+		credentials.setUserType(t);
+	}
 	public ArrayList<Room> getRooms() {
 		return rooms;
 	}
@@ -15,15 +24,6 @@ public class Faculty extends Person{
 	@Override
 	public void login() {
 		// TODO Auto-generated method stub
-		
-	}
-	public void book_room() {
-		
-	}
-	public void cancel_booking() {
-		
-	}
-	public void viewTimeTable(TimeTable timetable) {
 		
 	}
 

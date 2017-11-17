@@ -3,23 +3,22 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="APproject.view.course_controller">
    <children>
       <AnchorPane prefHeight="520.0" prefWidth="761.0">
          <children>
-            <Label layoutX="565.0" layoutY="21.0" prefHeight="20.0" prefWidth="170.0" text="Username: ">
+            <Label fx:id="user" layoutX="565.0" layoutY="21.0" prefHeight="20.0" prefWidth="170.0">
                <font>
                   <Font name="Serif Regular" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="565.0" layoutY="49.0" prefHeight="20.0" prefWidth="170.0" text="Type: Student">
+            <Label fx:id="type" layoutX="565.0" layoutY="49.0" prefHeight="20.0" prefWidth="170.0">
                <font>
                   <Font name="Serif Regular" size="17.0" />
                </font>
@@ -36,25 +35,23 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Make New Request">
+                  <Label text="Add Courses">
                      <font>
                         <Font name="Serif Regular" size="26.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="27.0" prefHeight="29.0" prefWidth="212.0" text="Cancel Request" GridPane.columnIndex="1">
+                  <Label layoutX="10.0" layoutY="27.0" prefHeight="29.0" prefWidth="212.0" text="Delete Courses" GridPane.columnIndex="1">
                      <font>
                         <Font name="Serif Regular" size="26.0" />
                      </font>
                   </Label>
-                  <TextField maxWidth="260.0" prefHeight="25.0" prefWidth="250.0" promptText="Purpose Of Booking" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <TextField layoutX="10.0" layoutY="91.0" maxWidth="260.0" promptText="Preferred Room Number" GridPane.rowIndex="2" />
-                  <TextField layoutX="10.0" layoutY="153.0" maxWidth="260.0" promptText="Expected Audience" GridPane.rowIndex="3" />
-                  <ComboBox prefHeight="25.0" prefWidth="260.0" promptText="Select Request" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="mycourses" prefHeight="45.0" prefWidth="260.0" promptText="View My Courses" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="allcourses" layoutX="391.0" layoutY="153.0" prefHeight="45.0" prefWidth="260.0" promptText="View All Courses" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <Button layoutX="242.0" layoutY="366.0" mnemonicParsing="false" text="Make Request" />
-            <Button layoutX="611.0" layoutY="366.0" mnemonicParsing="false" text="Cancel Request" />
-            <Button layoutX="611.0" layoutY="453.0" mnemonicParsing="false" prefWidth="100.0" text="Back" />
+            <Button fx:id="add_course" layoutX="234.0" layoutY="366.0" mnemonicParsing="false" onAction="#addcourses" prefHeight="29.0" prefWidth="100.0" text="Add Course" />
+            <Button layoutX="609.0" layoutY="362.0" mnemonicParsing="false" onAction="#remove" prefHeight="29.0" prefWidth="100.0" text="Remove Course" />
+            <Button fx:id="back" layoutX="611.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="29.0" prefWidth="100.0" text="Back" />
          </children>
       </AnchorPane>
    </children>

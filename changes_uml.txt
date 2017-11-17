@@ -1,3 +1,0 @@
-1. make the person class as abstract class
-2. cancel request option for students
-3. 

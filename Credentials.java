@@ -1,5 +1,8 @@
+package APproject;
 
-public class Credentials {
+import java.io.Serializable;
+
+public class Credentials implements Serializable{
 	private String name,EmailId,password,UserType;
 	
 	public String getName() {
@@ -36,8 +39,5 @@ public class Credentials {
 	public boolean validate(String email_id, String password) {
 		return (EmailId.equals(email_id)&&this.password.equals(password));
 	}
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//
-//	}
+
 }

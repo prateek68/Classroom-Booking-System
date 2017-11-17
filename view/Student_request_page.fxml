@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="APproject.view.student_request_controller">
+   <children>
+      <AnchorPane prefHeight="520.0" prefWidth="761.0">
+         <children>
+            <Label fx:id="user" layoutX="565.0" layoutY="21.0" prefHeight="20.0" prefWidth="170.0">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="type" layoutX="565.0" layoutY="49.0" prefHeight="20.0" prefWidth="170.0">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="72.0" layoutY="100.0" prefHeight="247.0" prefWidth="671.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="381.0" minWidth="10.0" prefWidth="371.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="246.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Make New Request">
+                     <font>
+                        <Font name="Serif Regular" size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="purpose" maxWidth="260.0" prefHeight="25.0" prefWidth="250.0" promptText="Purpose Of Booking" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <TextField fx:id="room" layoutX="10.0" layoutY="91.0" maxWidth="260.0" promptText="Preferred Room Number" GridPane.rowIndex="2" />
+                  <TextField fx:id="audience" layoutX="10.0" layoutY="153.0" maxWidth="260.0" promptText="Expected Audience" GridPane.rowIndex="3" />
+                  <Label fx:id="date" prefHeight="25.0" prefWidth="250.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Serif Regular" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="start_time" prefHeight="25.0" prefWidth="250.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Serif Regular" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="end_time" layoutX="391.0" layoutY="153.0" prefHeight="25.0" prefWidth="250.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Serif Regular" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <Button layoutX="611.0" layoutY="375.0" mnemonicParsing="false" onAction="#make_request" prefHeight="29.0" prefWidth="100.0" text="Make Request" />
+            <Button fx:id="back" layoutX="611.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefWidth="100.0" text="Back" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

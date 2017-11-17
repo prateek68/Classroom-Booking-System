@@ -1,10 +1,16 @@
+package APproject;
+
 import java.util.ArrayList;
 
 public class Student extends Person{
 	private TimeTable personalizedTimetable;
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public Student(String n,String e,String p,String t){
+		super();
+		credentials.setEmailId(e);
+		credentials.setName(n);
+		credentials.setPassword(p);
+		credentials.setUserType(t);
+		personalizedTimetable=new TimeTable();
 	}
 	public TimeTable getPersonalizedTimetable() {
 		return personalizedTimetable;
@@ -16,24 +22,6 @@ public class Student extends Person{
 	@Override
 	public void login() {
 		// TODO Auto-generated method stub
-		
-	}
-	public void makerequest() {
-		
-	}
-	public void viewTimeTabe(TimeTable timetable) {
-		
-	}
-	public void viewpersonalizedTimeTabe() {
-		
-	}
-	public void addcourse() {
-		
-	}
-	public void leavecourse() {
-		
-	}
-	public void view_pending_requests() {
 		
 	}
 	public ArrayList<Courses> searchcourses(ArrayList<String> keywords){
